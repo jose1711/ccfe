@@ -826,7 +826,8 @@ sub ask_string {
     push @fset, ${$field};
 
     push @fset, 0;
-    $cform = new_form( pack 'L!*', @fset );
+    my $cform_items = pack 'L!*', @fset;
+    $cform = new_form($cform_items);
     if ( $cform eq '' ) { fatal("ask_string.new_form() failed") }
     set_form_win( $cform, $win );
     set_form_sub( $cform, $swin );
@@ -2128,7 +2129,8 @@ sub do_menu {
         }
         push @fset, 0;
 
-        $cmenu = new_menu( pack 'L!*', @fset );
+        my $cmenu_items = pack 'L!*', @fset;
+        $cmenu = new_menu($cmenu_items);
         if ( $cmenu eq '' ) { fatal("do_menu.new_menu() failed") }
 
         $mwinr =
@@ -2472,7 +2474,8 @@ sub do_list {
     }
     push @fset, 0;
 
-    $cmenu = new_menu( pack 'L!*', @fset );
+    my $cmenu_items = pack 'L!*', @fset;
+    $cmenu = new_menu($cmenu_items);
     if ( $cmenu eq '' ) { fatal("do_list.new_menu() failed") }
 
     set_menu_mark( $cmenu, $mark );
@@ -3206,7 +3209,8 @@ sub do_form {
         }
         push @fset, 0;
 
-        $cform = new_form( pack 'L!*', @fset );
+        my $cform_items = pack 'L!*', @fset;
+        $cform = new_form($cform_items);
         if ( $cform eq '' ) { fatal("do_form.new_form() failed") }
 
         scale_form( $cform, $rows, $cols );
