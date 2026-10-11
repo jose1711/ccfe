@@ -36,7 +36,7 @@ use IO::Select;
 use File::Temp qw(tempfile);
 use Digest::MD5 qw(md5_hex);
 
-$VERSION      = '1.58';
+$VERSION      = '1.58.1';
 $VERSION_DATE = '04/09/2016';
 $VERSION_YEAR = '2009, 2016';
 
